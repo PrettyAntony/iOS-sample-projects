@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCc-5V-tyo">
+                                <rect key="frame" x="71.666666666666686" y="376" width="250" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stories Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejo-IL-StZ">
+                                        <rect key="frame" x="58.999999999999986" y="40" width="132" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="2aR-Jh-itf"/>
+                                    <constraint firstItem="ejo-IL-StZ" firstAttribute="leading" secondItem="mCc-5V-tyo" secondAttribute="leading" constant="59" id="3qx-bc-uv9"/>
+                                    <constraint firstAttribute="width" secondItem="mCc-5V-tyo" secondAttribute="height" multiplier="5:2" id="8Jq-Pk-uas"/>
+                                    <constraint firstAttribute="trailing" secondItem="ejo-IL-StZ" secondAttribute="trailing" constant="59" id="FoF-K0-HVp"/>
+                                    <constraint firstItem="ejo-IL-StZ" firstAttribute="top" secondItem="mCc-5V-tyo" secondAttribute="top" constant="40" id="Jyf-Lp-kb1"/>
+                                    <constraint firstItem="ejo-IL-StZ" firstAttribute="centerX" secondItem="mCc-5V-tyo" secondAttribute="centerX" id="r4U-8h-Zxn"/>
+                                    <constraint firstAttribute="height" constant="100" id="u3q-kF-qfg"/>
+                                    <constraint firstItem="ejo-IL-StZ" firstAttribute="centerY" secondItem="mCc-5V-tyo" secondAttribute="centerY" id="vaL-rc-VAk"/>
+                                    <constraint firstAttribute="bottom" secondItem="ejo-IL-StZ" secondAttribute="bottom" constant="39" id="wg8-4g-L52"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.69616781399343997" green="0.58984301718488064" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mCc-5V-tyo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XQi-yF-SRM"/>
+                            <constraint firstItem="mCc-5V-tyo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="sc8-ai-4XF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+</document>
