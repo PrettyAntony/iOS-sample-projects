@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Hunting-Camera-4K-Wildlife-Trail-Cam-Infrared-Night-Vision-Wireless-APP-Surveillance-Scouting-Photo-Traps.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
