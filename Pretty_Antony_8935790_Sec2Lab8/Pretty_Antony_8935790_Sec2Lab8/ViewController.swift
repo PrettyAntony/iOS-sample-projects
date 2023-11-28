@@ -10,12 +10,14 @@ import CoreLocation
 
 class ViewController: UIViewController,CLLocationManagerDelegate {
     
+    //location manager
     let manager = CLLocationManager()
     
+    //variables for latitude & longiude
     var currentLatitude = 0.00
     var currentLongitude = 0.00
     
-    
+    //label outlets and images
     @IBOutlet weak var labelCityName: UILabel!
     
     @IBOutlet weak var labelCurrentWeather: UILabel!
@@ -28,12 +30,13 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
     
     @IBOutlet weak var labelWind: UILabel!
     
+    //variable for storing values
     var cityName : String = ""
     var currentWeather : String = ""
     var temparature : Double = 0.00
     var humidity : Int = 0
     var wind : Double = 0.00
-    var weatherIcon = ""
+    var _weatherIcon = UIImage()
     
     //to fetch current location lattitude and longitude
     func locationManager(_ manager: CLLocationManager, didUpdateLocations location: [CLLocation]) {
@@ -57,10 +60,10 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         DispatchQueue.main.async {
             self.labelCityName.text = self.cityName
             self.labelCurrentWeather.text = self.currentWeather
-            self.labelTemperature.text = String(Int(self.temparature-273.15))+"°"
+            self.labelTemperature.text = String(Int(self.temparature-273.15))+"°C"
             self.labelHumidity.text = "Humidity : "+String(self.humidity)+"%"
             self.labelWind.text = "Wind : "+String(self.wind)+"km/hr"
-            self.weatherImage.image = UIImage(named: self.currentWeather)
+            self.weatherImage.image = self._weatherIcon
         }
     }
     
@@ -91,10 +94,23 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
                         //setting values to all variables
                         self.cityName = readableData.name
                         self.currentWeather = readableData.weather[0].description
-                        self.weatherIcon = readableData.weather[0].icon
                         self.temparature = readableData.main.temp
                         self.humidity = readableData.main.humidity
                         self.wind = readableData.wind.speed
+                        
+                        //getting weather icon
+                        let weatherIconUrl = getWeatherIconUrl+readableData.weather[0].icon+".png"
+                        
+                        if let iconURL = URL(string: weatherIconUrl),
+                           let imageData = try? Data(contentsOf: iconURL),
+                           let weatherIcon = UIImage(data: imageData) {
+                           
+                            self._weatherIcon = weatherIcon
+                            
+                        } else {
+                            // Handle the case where the image couldn't be loaded
+                            print("Error loading weather icon")
+                        }
                         
                         //calling function to make display changes
                         self.setWeatherCastingDetails()
