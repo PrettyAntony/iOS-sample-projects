@@ -41,8 +41,10 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
     //to fetch current location lattitude and longitude
     func locationManager(_ manager: CLLocationManager, didUpdateLocations location: [CLLocation]) {
         if let location = location.last{
-            currentLatitude = location.coordinate.latitude
-            currentLongitude = location.coordinate.longitude
+            
+            //rounding of the decimal places to 6 digits
+            currentLatitude = formatValueAndSet(location.coordinate.latitude)
+            currentLongitude = formatValueAndSet(location.coordinate.longitude)
             
             //uncomment the code for stoping the location updation
             manager.stopUpdatingLocation()
@@ -51,6 +53,12 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
             
             
         }
+    }
+    
+    //rounding of the decimal places to 6 digits
+    func formatValueAndSet(_ oldValue:Double)->Double{
+        let newValue = String(format: "%6f", oldValue)
+        return Double(newValue)!
     }
     
     //to update the weather details
